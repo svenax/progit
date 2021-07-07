@@ -496,7 +496,7 @@ apply オプションは、スタックに隠した作業を再度適用する�
 次の例のようにエイリアスを作れば、Git に `stash-unapply` コマンドを追加したのと事実上同じことになります。
 
     $ git config --global alias.stash-unapply '!git stash show -p | git apply -R'
-    $ git stash
+    $ git stash apply
     $ #... 何か作業をして ...
     $ git stash-unapply
 
@@ -1102,7 +1102,7 @@ Git でこれと同じことをするためのよい方法は、それぞれの�
 	$ ls
 	README
 
-Rack プロジェクトを `master` プロジェクトのサブディレクトリとして取り込みたくなったときには、`git read-tree` を使います。`read-tree` とその仲間たちについては第 9 章で詳しく説明します。現時点では、とりあえず「あるブランチのルートツリーを読み込んで、それを現在のステージングエリアと作業ディレクトリに書き込むもの」だと認識しておけばよいでしょう。まず `master` ブランチに戻り、`rack` ブランチの内容を `master` ブランチの `rack` サブディレクトリに取り込みます。
+Rack プロジェクトを `master` プロジェクトのサブディレクトリとして取り込みたくなったときには、`git read-tree` を使います。`read-tree` とその仲間たちについては第 9 章で詳しく説明します。現時点では、とりあえず「あるブランチのルートツリーを読み込んで、それを現在のステージングエリアと作業ディレクトリに書き込むもの」だと認識しておけばよいでしょう。まず `master` ブランチに戻り、`rack_branch` ブランチの内容を `master` ブランチの `rack` サブディレクトリに取り込みます。
 
 	$ git read-tree --prefix=rack/ -u rack_branch
 

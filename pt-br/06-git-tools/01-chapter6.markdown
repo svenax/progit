@@ -497,7 +497,7 @@ Novamente, se você não especificar um stash, Git assume que é o stash mais re
 Você pode querer criar um alias e adicionar explicitamente um comando `stash-unapply` no seu git. Por exemplo:
 
     $ git config --global alias.stash-unapply '!git stash show -p | git apply -R'
-    $ git stash
+    $ git stash apply
     $ #... work work work
     $ git stash-unapply
 
@@ -1091,7 +1091,7 @@ Agora você tem a raiz do projeto Rack no seu branch `rack_branch` e o seu proje
     $ ls
     README
 
-Você quer colocar o projeto Rack no seu projeto `master` como um subdiretório. Você pode fazer isso no Git com `git read-tree`. Você irá aprender mais sobre `read-tree` e seus companheiros no Capítulo 9, mas por enquanto saiba que ele escreve a raiz da árvore de um branch na sua área de seleção e diretório de trabalho. Você volta para o branch `master`, você coloca o branch `rack` no subdiretório `rack` no branch `master` do seu projeto principal:
+Você quer colocar o projeto Rack no seu projeto `master` como um subdiretório. Você pode fazer isso no Git com `git read-tree`. Você irá aprender mais sobre `read-tree` e seus companheiros no Capítulo 9, mas por enquanto saiba que ele escreve a raiz da árvore de um branch na sua área de seleção e diretório de trabalho. Você volta para o branch `master`, você coloca o branch `rack_branch` no subdiretório `rack` no branch `master` do seu projeto principal:
 
     $ git read-tree --prefix=rack/ -u rack_branch
 

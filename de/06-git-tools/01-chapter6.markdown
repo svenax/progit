@@ -660,7 +660,7 @@ An dieser Stelle noch einmal der Hinweis, dass Git den zuletzt erstellten Stash 
 Wenn Du dieses Feature öfters benötigst, ist es wahrscheinlich sinnvoll, einen Alias `stash-unapply` in Git dafür anzulegen:
 
     $ git config --global alias.stash-unapply '!git stash show -p | git apply -R'
-    $ git stash
+    $ git stash apply
     $ #... work work work
     $ git stash-unapply
 
@@ -1458,7 +1458,7 @@ Nach der Ausführung der drei Befehle befindet sich das Rack-Projekt in Deinem B
 
 <!--You want to pull the Rack project into your `master` project as a subdirectory. You can do that in Git with `git read-tree`. You’ll learn more about `read-tree` and its friends in Chapter 9, but for now know that it reads the root tree of one branch into your current staging area and working directory. You just switched back to your `master` branch, and you pull the `rack` branch into the `rack` subdirectory of your `master` branch of your main project:-->
 
-Jetzt möchten wir das Rack-Projekt in Deinen Branch `master` als Unterverzeichnis hinzufügen. Dies kann man in Git mit dem Befehl `git read-tree` durchführen. In Kapitel 9 werde ich den Befehl `read-tree` und dessen verwandte Befehle näher erläutern. Hier möchte ich nur erklären, dass der Befehl das Wurzelverzeichnis eines Branches in die aktuelle Staging-Area und in das Arbeitsverzeichnis packt. Damit hast Du jetzt zu Deinem Branch `master` zurückgewechselt, den Inhalt des Branches `rack` in das Unterverzeichnis `rack` im Branch `master` Deines Projekts hinterlegt:
+Jetzt möchten wir das Rack-Projekt in Deinen Branch `master` als Unterverzeichnis hinzufügen. Dies kann man in Git mit dem Befehl `git read-tree` durchführen. In Kapitel 9 werde ich den Befehl `read-tree` und dessen verwandte Befehle näher erläutern. Hier möchte ich nur erklären, dass der Befehl das Wurzelverzeichnis eines Branches in die aktuelle Staging-Area und in das Arbeitsverzeichnis packt. Damit hast Du jetzt zu Deinem Branch `master` zurückgewechselt, den Inhalt des Branches `rack_branch` in das Unterverzeichnis `rack` im Branch `master` Deines Projekts hinterlegt:
 
 	$ git read-tree --prefix=rack/ -u rack_branch
 
@@ -1499,4 +1499,4 @@ Um Dein Verzeichnis `rack` mit dem letzten Stand des Branches `master` auf dem S
 
 <!--You’ve seen a number of advanced tools that allow you to manipulate your commits and staging area more precisely. When you notice issues, you should be able to easily figure out what commit introduced them, when, and by whom. If you want to use subprojects in your project, you’ve learned a few ways to accommodate those needs. At this point, you should be able to do most of the things in Git that you’ll need on the command line day to day and feel comfortable doing so.-->
 
-In diesem Kapitel hast Du viele ausgeklügelte Werzeuge kennengelernt, die es Dir ermöglichen, Commits und die Staging-Area nach Deinen Vorstellungen zu beeinflussen. Wenn ein Problem in Deinem Projekt auftaucht, solltest Du jetzt leicht bestimmen können, welcher Commit den Fehler verursacht hat, sowie wann und von wem der Fehler begangen wurde. Wenn Du andere Projekte in Deinem Projekt verwenden möchtest, hast Du jetzt mehrere Möglichkeiten kennengelernt, wie Du dies handhaben kannst. An dieser Stelle solltest Du jetzt in der Lage sein, die meisten Dinge, die Du bei der täglichen Arbeit benötigst, in der Kommandozeile durchzuführen, ohne dass Dir dabei Schweißperlen auf der Stirn stehen.
+In diesem Kapitel hast Du viele ausgeklügelte Werkzeuge kennengelernt, die es Dir ermöglichen, Commits und die Staging-Area nach Deinen Vorstellungen zu beeinflussen. Wenn ein Problem in Deinem Projekt auftaucht, solltest Du jetzt leicht bestimmen können, welcher Commit den Fehler verursacht hat, sowie wann und von wem der Fehler begangen wurde. Wenn Du andere Projekte in Deinem Projekt verwenden möchtest, hast Du jetzt mehrere Möglichkeiten kennengelernt, wie Du dies handhaben kannst. An dieser Stelle solltest Du jetzt in der Lage sein, die meisten Dinge, die Du bei der täglichen Arbeit benötigst, in der Kommandozeile durchzuführen, ohne dass Dir dabei Schweißperlen auf der Stirn stehen.

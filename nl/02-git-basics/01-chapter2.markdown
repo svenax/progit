@@ -459,9 +459,9 @@ Git komt er impliciet achter dat het om een hernoemd bestand gaat, dus het maakt
 
 ## De commit geschiedenis bekijken ##
 
-Nadat je een aantal commits gemaakt hebt, of als je een repository met een bestaande commit-geschiedenis gecloned hebt, zul je waarschijnlijk terug willen zien wat er gebeurd is. Het meest basale en krachtige tool om dit te doen is het `git log` commando.
+Nadat je een aantal commits gemaakt hebt, of als je een repository met een bestaande commit-geschiedenis gecloned hebt, zul je waarschijnlijk terug willen zien wat er gebeurd is. De meest basale en krachtige tool om dit te doen is het `git log` commando.
 
-Deze voorbeelden maken gebruik van een eenvoudig project genaamd simplegit dat ik vaak voor demonstraties gebruikt. Om het project op te halen, voer dit uit
+Deze voorbeelden maken gebruik van een eenvoudig project genaamd simplegit dat ik vaak voor demonstraties gebruik. Om het project op te halen, voer dit uit
 
 	git clone git://github.com/schacon/simplegit-progit.git
 
@@ -655,7 +655,7 @@ The lines must be formatted as follows
 	--name-status	Toon ook de lijst van bestanden die beïnvloed zijn door de toegevoegde/gewijzigde/verwijderde informatie.
 	--abbrev-commit	Toon alleen de eerste paar karakters van de SHA-1 checksum in plaats van alle 40.
 	--relative-date	Toon de datum in een relatief formaat (bijvoorbeeld, "2 weken geleden"), in plaats van het volledige datum formaat.
-	--graph		Toon een ASCII grafiek van de branch- en merge-geschiedenis naast de log output.
+	--graph	Toon een ASCII grafiek van de branch- en merge-geschiedenis naast de log output.
 	--pretty	Toon commits in een alternatief formaat. De opties bevatten oneline, short, full, fuller, en format (waarbij je je eigen formaat specificeert).
 	--oneline	Een gemaks-optie, staat voor `--pretty=oneline --abbrev-commit`.
 

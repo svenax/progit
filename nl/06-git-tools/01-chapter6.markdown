@@ -538,7 +538,7 @@ Nogmaals: als je geen stash specificeert gaat Git van de meest recente stash uit
 Wellicht wil je een alias maken en effectief een `stash-unapply` commando aan je Git toevoegen. Bijvoorbeeld:
 
     $ git config --global alias.stash-unapply '!git stash show -p | git apply -R'
-    $ git stash
+    $ git stash apply
     $ #... work work work
     $ git stash-unapply
 
@@ -585,7 +585,7 @@ Je moet wel oppassen met deze techniek, omdat het amenden de SHA-1 van de commit
 
 ### Meerdere commit berichten wijzigen ###
 
-Om een commit te wijzigen die verder terug in je geschiedenis zit, moet je meer complexe tools gebruiken. Git heeft geen geschiedenis-wijzig tool, maar je kunt het rebase tool gebruiken om een serie commits op de HEAD te rebasen waarop ze origineel gebaseerd, in plaats van ze naar een andere te verhuizen. Met het interactieve rebase tool kun je dan na iedere commit die je wilt wijzigen stoppen en het bericht wijzigen, bestanden toevoegen, of doen wat je ook maar wilt. Je kunt rebase interactief uitvoeren door de `-i` optie aan `git rebase` toe te voegen. Je moet aangeven hoe ver terug je commits wilt herschrijven door het commando te vertellen op welke commit het moet rebasen.
+Om een commit te wijzigen die verder terug in je geschiedenis zit, moet je meer complexe tools gebruiken. Git heeft geen geschiedenis-wijzig tool, maar je kunt de rebase tool gebruiken om een serie commits op de HEAD te rebasen waarop ze origineel gebaseerd, in plaats van ze naar een andere te verhuizen. Met de interactieve rebase tool kun je dan na iedere commit die je wilt wijzigen stoppen en het bericht wijzigen, bestanden toevoegen, of doen wat je ook maar wilt. Je kunt rebase interactief uitvoeren door de `-i` optie aan `git rebase` toe te voegen. Je moet aangeven hoe ver terug je commits wilt herschrijven door het commando te vertellen op welke commit het moet rebasen.
 
 Bijvoorbeeld, als je de laatste drie commit berichten wilt veranderen, of een van de commit berichten in die groep, dan geef je de ouder van de laatste commit die je wilt wijzigen mee als argument aan `git rebase -i`, wat `HEAD~2^` of `HEAD~3` is. Het kan makkelijker zijn om de `~3` te onthouden, omdat je de laatste drie commits probeert te wijzigen; maar houd in gedachten dat je eigenlijk vier commits terug aangeeft; de ouder van de laatste commit die je wilt veranderen:
 
@@ -671,7 +671,7 @@ Als je dan opslaat en de editor sluit, zal Git je branch terugzetten naar de oud
 
 ### Een commit samenpersen (squashing) ###
 
-Het is ook mogelijk een serie commits te pakken en ze in één enkele commit samen te persen (squash) met het interactieve rebase tool. Het script stopt behulpzame instructies in het rebase bericht:
+Het is ook mogelijk een serie commits te pakken en ze in één enkele commit samen te persen (squash) met de interactieve rebase tool. Het script stopt behulpzame instructies in het rebase bericht:
 
 	#
 	# Commands:
@@ -1146,7 +1146,7 @@ Nu heb je de root van het Rack project in je `rack_branch` branch en je eigen pr
 	$ ls
 	README
 
-Je gaat nu het Rack project in je `master` project pullen als een subdirectory. Je kunt dat in Git doen met `git read-tree`. Je zult meer over `read-tree` en zijn vriendjes leren in Hoofdstuk 9, maar weet voor nu dat het de roottree van een branch in je huidige staging area en werkdirectory leest. Je hebt zojuist teruggewisseld naar je `master` branch, en je pulled de `rack` branch in de `rack` subdirectory van de `master` branch van je hoofdproject:
+Je gaat nu het Rack project in je `master` project pullen als een subdirectory. Je kunt dat in Git doen met `git read-tree`. Je zult meer over `read-tree` en zijn vriendjes leren in Hoofdstuk 9, maar weet voor nu dat het de roottree van een branch in je huidige staging area en werkdirectory leest. Je hebt zojuist teruggewisseld naar je `master` branch, en je pulled de `rack_branch` branch in de `rack` subdirectory van de `master` branch van je hoofdproject:
 
 	$ git read-tree --prefix=rack/ -u rack_branch
 

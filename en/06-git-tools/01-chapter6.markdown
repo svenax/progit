@@ -501,7 +501,7 @@ Again, if you don’t specify a stash, Git assumes the most recent stash:
 You may want to create an alias and effectively add a `stash-unapply` command to your Git. For example:
 
     $ git config --global alias.stash-unapply '!git stash show -p | git apply -R'
-    $ git stash
+    $ git stash apply
     $ #... work work work
     $ git stash-unapply
 
@@ -1119,7 +1119,7 @@ Now you have the root of the Rack project in your `rack_branch` branch and your 
 	$ ls
 	README
 
-You want to pull the Rack project into your `master` project as a subdirectory. You can do that in Git with `git read-tree`. You’ll learn more about `read-tree` and its friends in Chapter 9, but for now know that it reads the root tree of one branch into your current staging area and working directory. You just switched back to your `master` branch, and you pull the `rack` branch into the `rack` subdirectory of your `master` branch of your main project:
+You want to pull the Rack project into your `master` project as a subdirectory. You can do that in Git with `git read-tree`. You’ll learn more about `read-tree` and its friends in Chapter 9, but for now know that it reads the root tree of one branch into your current staging area and working directory. You just switched back to your `master` branch, and you pull the `rack_branch` branch into the `rack` subdirectory of your `master` branch of your main project:
 
 	$ git read-tree --prefix=rack/ -u rack_branch
 
